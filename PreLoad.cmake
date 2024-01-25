@@ -14,6 +14,22 @@ if (NOT DEFINED ENV{XCODE_IDE})
     endif ()
 endif()
 
+if (NOT "$ENV{CFLAGS}" STREQUAL "")
+    message("1")
+endif()
+if (NOT "$ENV{CXXFLAGS}" STREQUAL "")
+    message("2")
+endif()
+if (NOT "$ENV{LDFLAGS}" STREQUAL "")
+    message("3")
+endif()
+if (CMAKE_C_FLAGS OR CMAKE_CXX_FLAGS OR CMAKE_EXE_LINKER_FLAGS OR CMAKE_MODULE_LINKER_FLAGS)
+    message("4")
+endif()
+if (CMAKE_C_FLAGS_INIT OR CMAKE_CXX_FLAGS_INIT OR CMAKE_EXE_LINKER_FLAGS_INIT OR CMAKE_MODULE_LINKER_FLAGS_INIT)
+    message("5")
+endif()
+
 # Check if environment is polluted.
 if (NOT "$ENV{CFLAGS}" STREQUAL ""
     OR NOT "$ENV{CXXFLAGS}" STREQUAL ""
