@@ -1,4 +1,3 @@
-# Use Ninja instead of Unix Makefiles by default.
 # https://stackoverflow.com/questions/11269833/cmake-selecting-a-generator-within-cmakelists-txt
 #
 # Reason: it has better startup time than make and it parallelizes jobs more uniformly.
